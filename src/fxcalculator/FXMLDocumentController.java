@@ -5,6 +5,8 @@
  */
 package fxcalculator;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -18,20 +20,68 @@ import javafx.scene.control.TextField;
  * @author n231055a
  */
 public class FXMLDocumentController implements Initializable {
-    
-    private int register=0;
-    private boolean opeAdd=false;
+
     @FXML
-    private TextField accumulater;
+    private TextField display;
+    
+    BigInteger reg = new BigInteger("0");
+    BigDecimal register = new BigDecimal(0);
+    BigDecimal accum = new BigDecimal(0);
+    
+    enum Operator { none, add, sub, mul, div, mod, root, eq};
+    Operator ope = Operator.none;
     
     @FXML
-    private void KeyAction(ActionEvent event) {
+    private void handleNumberAction(ActionEvent event){
         Button b = (Button)event.getSource();
-        if(opeAdd == true){
-            accumulater.setText("0");
-            opeAdd = false;
-        }
+        BigInteger val = new BigInteger(b.getText());
         
+        reg = reg.multiply(new BigInteger("10"));
+        reg = reg.add(val);
+        
+        register = new BigDecimal(reg.toString());
+        display.setText(register.toPlainString());
+    }
+    
+    private void clear(){
+        reg = new BigInteger("0");
+        register = new BigDecimal("0");
+    }
+    @FXML
+    private void handleACAction(ActionEvent event){
+        clear();
+        display.setText("0");
+    }
+    
+    private void calc(){
+        switch(ope){
+            case none:
+                accum = register;
+                return;
+            case add:
+                accum = accum.add(register);
+                break;
+            case sub:
+                break;
+            case mul:
+                break;
+            case div:
+                break;
+            case mod:
+                break;
+            case root:
+                break;
+            case eq:
+                break;
+        }
+        display.setText(accum.toPlainString());
+    }
+    
+    @FXML
+    private void handleAddAction(ActionEvent event){
+        calc();
+        clear();
+        ope = Operator.add;
     }
     
     @Override
