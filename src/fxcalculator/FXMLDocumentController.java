@@ -6,6 +6,7 @@
 package fxcalculator;
 
 import java.math.BigDecimal;
+import static java.math.BigDecimal.ROUND_HALF_UP;
 import java.math.BigInteger;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -62,10 +63,13 @@ public class FXMLDocumentController implements Initializable {
                 accum = accum.add(register);
                 break;
             case sub:
+                accum = accum.subtract(register);
                 break;
             case mul:
+                accum = accum.multiply(register);
                 break;
             case div:
+                accum = accum.divide(register, 5, ROUND_HALF_UP);
                 break;
             case mod:
                 break;
@@ -74,7 +78,7 @@ public class FXMLDocumentController implements Initializable {
             case eq:
                 break;
         }
-        display.setText(accum.toPlainString());
+        display.setText(accum.stripTrailingZeros().toPlainString());
     }
     
     @FXML
@@ -82,6 +86,27 @@ public class FXMLDocumentController implements Initializable {
         calc();
         clear();
         ope = Operator.add;
+    }
+
+    @FXML
+    private void handleSubAction(ActionEvent event){
+        calc();
+        clear();
+        ope = Operator.sub;
+    }
+    
+    @FXML
+    private void handleMulAction(ActionEvent event){
+        calc();
+        clear();
+        ope = Operator.mul;
+    }
+    
+    @FXML
+    private void handleDivAction(ActionEvent event){
+        calc();
+        clear();
+        ope = Operator.div;
     }
     
     @Override
