@@ -25,9 +25,11 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField display;
     
-    BigInteger reg = new BigInteger("0");
+    BigDecimal reg = new BigDecimal("0");
     BigDecimal register = new BigDecimal(0);
     BigDecimal accum = new BigDecimal(0);
+    boolean decimalFlag = false;
+    BigInteger dec = new BigInteger("10");
     
     enum Operator { none, add, sub, mul, div, mod, root, eq};
     Operator ope = Operator.none;
@@ -35,18 +37,26 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleNumberAction(ActionEvent event){
         Button b = (Button)event.getSource();
-        BigInteger val = new BigInteger(b.getText());
+        BigDecimal val = new BigDecimal(b.getText());
         
-        reg = reg.multiply(new BigInteger("10"));
-        reg = reg.add(val);
-        
+        if(decimalFlag){
+            val = val.divide(new BigDecimal(dec));
+            dec = dec.multiply(new BigInteger("10"));
+            System.out.println(val);
+            reg = reg.add(val);
+        }else{
+            reg = reg.multiply(new BigDecimal("10"));
+            reg = reg.add(val);
+        }
         register = new BigDecimal(reg.toString());
         display.setText(register.toPlainString());
     }
     
     private void clear(){
-        reg = new BigInteger("0");
+        reg = new BigDecimal("0");
         register = new BigDecimal("0");
+        dec = new BigInteger("10");
+        decimalFlag = false;
     }
     @FXML
     private void handleACAction(ActionEvent event){
@@ -107,6 +117,21 @@ public class FXMLDocumentController implements Initializable {
         calc();
         clear();
         ope = Operator.div;
+    }
+    
+    @FXML
+    private void handleEqAction(ActionEvent event){
+        calc();
+        clear();
+        ope = Operator.none;
+    }
+   
+    @FXML
+    private void handleDecimalAction(ActionEvent event){
+        if(!decimalFlag){
+            decimalFlag = true;
+            display.setText(register.toPlainString()+".");
+        }
     }
     
     @Override
