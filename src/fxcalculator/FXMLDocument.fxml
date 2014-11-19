@@ -18,13 +18,13 @@
       <Button layoutX="1.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleNumberAction" text="7" />
       <Button layoutX="1.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleNumberAction" text="4" />
       <Button layoutX="28.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleNumberAction" text="8" />
-      <Button alignment="CENTER" layoutX="55.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleDecimalAction"  prefHeight="26.0" prefWidth="27.0" text="." />
+      <Button alignment="CENTER" layoutX="55.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleNumberAction"  prefHeight="26.0" prefWidth="27.0" text="." />
       <Button layoutX="1.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="54.0" text="0" />
       <Button layoutX="82.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleEqAction" prefHeight="26.0" prefWidth="27.0" text="=" />
       <Button layoutX="82.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleDivAction" text="÷" />
       <Button layoutX="55.0" layoutY="27.0" mnemonicParsing="false" text="\%" />
       <Button layoutX="28.0" layoutY="27.0" mnemonicParsing="false" text="√" />
-      <Button layoutX="1.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleACAction" text="C" />
+      <Button layoutX="1.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleACAction" text="AC" />
       <Button layoutX="82.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleMulAction" text="×" />
       <Button layoutX="82.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleSubAction" prefHeight="26.0" prefWidth="29.0" text="-" />
       <Button layoutX="82.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="26.0" prefWidth="27.0" text="+" />
