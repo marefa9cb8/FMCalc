@@ -25,11 +25,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField display;
     
-    BigDecimal reg = new BigDecimal("0");
+    String reg = "0";
     BigDecimal register = new BigDecimal(0);
     BigDecimal accum = new BigDecimal(0);
     boolean decimalFlag = false;
     BigInteger dec = new BigInteger("10");
+    BigDecimal temp;
     
     enum Operator { none, add, sub, mul, div, mod, root, eq};
     Operator ope = Operator.none;
@@ -37,23 +38,25 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleNumberAction(ActionEvent event){
         Button b = (Button)event.getSource();
-        BigDecimal val = new BigDecimal(b.getText());
         
-        if(decimalFlag){
-            val = val.divide(new BigDecimal(dec));
-            dec = dec.multiply(new BigInteger("10"));
-            System.out.println(val);
-            reg = reg.add(val);
+        if(".".equals(b.getText())){
+            if(!decimalFlag){
+                decimalFlag = true;
+                reg = reg + ".";
+            }
         }else{
-            reg = reg.multiply(new BigDecimal("10"));
-            reg = reg.add(val);
+            BigDecimal val = new BigDecimal(b.getText());
+            if("0".equals(reg))
+                reg = val.toString();
+            else
+                reg = reg + val.toString();
         }
-        register = new BigDecimal(reg.toString());
-        display.setText(register.toPlainString());
+        display.setText(reg);
+        register = new BigDecimal(reg);
     }
     
     private void clear(){
-        reg = new BigDecimal("0");
+        reg = "0";
         register = new BigDecimal("0");
         dec = new BigInteger("10");
         decimalFlag = false;
@@ -125,15 +128,7 @@ public class FXMLDocumentController implements Initializable {
         clear();
         ope = Operator.none;
     }
-   
-    @FXML
-    private void handleDecimalAction(ActionEvent event){
-        if(!decimalFlag){
-            decimalFlag = true;
-            display.setText(register.toPlainString()+".");
-        }
-    }
-    
+  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
