@@ -57,16 +57,22 @@ public class FXMLDocumentController implements Initializable {
     
     private void clear(){
         reg = "0";
-        register = new BigDecimal("0");
-        dec = new BigInteger("10");
         decimalFlag = false;
     }
     @FXML
     private void handleACAction(ActionEvent event){
         clear();
         display.setText("0");
+        register = new BigDecimal("0");
+        ope = Operator.none;
     }
     
+    @FXML
+    private void handleCAction(ActionEvent event){
+        clear();
+        display.setText("0");
+        register = new BigDecimal("0");
+    }    
     private void calc(){
         switch(ope){
             case none:
@@ -83,10 +89,6 @@ public class FXMLDocumentController implements Initializable {
                 break;
             case div:
                 accum = accum.divide(register, 5, ROUND_HALF_UP);
-                break;
-            case mod:
-                break;
-            case root:
                 break;
             case eq:
                 break;
@@ -127,6 +129,8 @@ public class FXMLDocumentController implements Initializable {
         calc();
         clear();
         ope = Operator.none;
+        register = new BigDecimal(display.getText());
+        System.out.println(register);
     }
   
     @Override

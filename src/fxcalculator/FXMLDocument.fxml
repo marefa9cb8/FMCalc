@@ -6,27 +6,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="152.0" prefWidth="111.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxcalculator.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="123.0" prefWidth="110.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxcalculator.FXMLDocumentController">
    <children>
-      <TextField fx:id="display" alignment="CENTER_RIGHT" layoutX="1.0" layoutY="1.0" prefHeight="26.0" prefWidth="109.0" text="0" />
-      <Button layoutX="1.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="20.0" prefWidth="21.0" text="1" />
-      <Button layoutX="28.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleNumberAction" text="2" />
-      <Button layoutX="55.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleNumberAction" text="6" />
-      <Button layoutX="55.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="26.0" text="3" />
-      <Button layoutX="55.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleNumberAction" text="9" />
-      <Button layoutX="28.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleNumberAction" text="5" />
-      <Button layoutX="1.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleNumberAction" text="7" />
-      <Button layoutX="1.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleNumberAction" text="4" />
-      <Button layoutX="28.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleNumberAction" text="8" />
-      <Button alignment="CENTER" layoutX="55.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleNumberAction"  prefHeight="26.0" prefWidth="27.0" text="." />
-      <Button layoutX="1.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="54.0" text="0" />
-      <Button layoutX="82.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleEqAction" prefHeight="26.0" prefWidth="27.0" text="=" />
-      <Button layoutX="82.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleDivAction" text="÷" />
-      <Button layoutX="55.0" layoutY="27.0" mnemonicParsing="false" text="\%" />
-      <Button layoutX="28.0" layoutY="27.0" mnemonicParsing="false" text="√" />
-      <Button layoutX="1.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleACAction" text="AC" />
-      <Button layoutX="82.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleMulAction" text="×" />
-      <Button layoutX="82.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleSubAction" prefHeight="26.0" prefWidth="29.0" text="-" />
-      <Button layoutX="82.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="26.0" prefWidth="27.0" text="+" />
+      <TextField fx:id="display" alignment="CENTER_RIGHT" layoutX="1.0" layoutY="2.0" prefHeight="26.0" prefWidth="109.0" text="0" />
+      <Button alignment="CENTER" layoutY="104.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="27.0" text="1" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="27.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="27.0" text="2" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="54.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="27.0" text="6" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="54.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="27.0" text="3" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="54.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="27.0" text="9" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="27.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="27.0" text="5" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutY="53.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="27.0" text="7" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutY="78.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="27.0" text="4" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="27.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="27.0" text="8" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="54.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="27.0" text="." textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutY="130.0" mnemonicParsing="false" onAction="#handleNumberAction" prefHeight="26.0" prefWidth="54.0" text="0" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="81.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleEqAction" prefHeight="26.0" prefWidth="27.0" text="=" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="81.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleDivAction" prefHeight="26.0" prefWidth="27.0" text="÷" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="54.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleCAction" prefHeight="26.0" prefWidth="27.0" text="C" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutY="27.0" mnemonicParsing="false" onAction="#handleACAction" prefHeight="26.0" prefWidth="54.0" text="AC" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="81.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleMulAction" prefHeight="26.0" prefWidth="27.0" text="×" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="81.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleSubAction" prefHeight="26.0" prefWidth="27.0" text="-" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button alignment="CENTER" layoutX="81.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="26.0" prefWidth="27.0" text="+" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
    </children>
 </AnchorPane>
